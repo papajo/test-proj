@@ -1,17 +1,16 @@
 # Welcome To Test Project
 
-Welcome to the **Test Project** repository! This project is built on **OKF (Open Knowledge Format)**, which is based on the **Open Knowledge Format Initiative**. All necessary details about OKF and setup instructions can be found in the [OKF.md](OKF.md) and [okf-instructions.md](okf-instructions.md) documents.
+A repository demonstrating OKF templates, Entity Maps, and AI engineer roadmaps.
 
 ---
 
 ## Table of Contents
 
 - [Overview](#overview)
-- [Getting Started](#getting-started)
-  - [Prerequisites](#prerequisites)
-  - [Installation](#installation)
-- [Usage](#usage)
 - [Documentation](#documentation)
+- [Getting Started](#getting-started)
+- [Usage](#usage)
+- [Project Structure](#project-structure)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -19,9 +18,37 @@ Welcome to the **Test Project** repository! This project is built on **OKF (Open
 
 ## Overview
 
-**Test Project** uses the **Open Knowledge Format (OKF)**, a powerful methodology rooted in the **Open Knowledge Format Initiative**. OKF aims to provide a standardized approach to organizing, presenting, and sharing knowledge across multiple domains in an accessible way.
+This project contains:
 
-This repository demonstrates the implementation and testing of OKF principles, offering a solid foundation for building scalable and flexible knowledge-based systems.
+1. **OKF Templates** - Objectives, Key Results, and project structure
+2. **Entity Maps** - Visual relationship diagrams for knowledge mapping
+3. **FDE Roadmap** - 90-day Forward Deployed Engineer learning path
+
+---
+
+## Documentation
+
+### OKF System
+
+| File | Description |
+|------|-------------|
+| [OKF.md](OKF.md) | Project objectives and key results |
+| [okf-instructions.md](okf-instructions.md) | How to use OKF templates |
+
+### Entity Maps
+
+| File | Description |
+|------|-------------|
+| [entity-maps.md](entity-maps.md) | Entity maps overview |
+| [entity-maps-instructions.md](entity-maps-instructions.md) | How to create entity maps |
+
+### FDE AI Engineer Roadmap
+
+| File | Description |
+|------|-------------|
+| [FDE-AI-Engineer-Roadmap.md](FDE-AI-Engineer-Roadmap.md) | Original 90-day roadmap |
+| [FDE-AI-Engineer-Roadmap-OKF.md](FDE-AI-Engineer-Roadmap-OKF.md) | OKF version with objectives |
+| [fde-roadmap-entity-map.md](fde-roadmap-entity-map.md) | Architecture visualization |
 
 ---
 
@@ -29,94 +56,128 @@ This repository demonstrates the implementation and testing of OKF principles, o
 
 ### Prerequisites
 
-Before starting, ensure you have the following software or dependencies installed. Refer to the [okf-instructions.md](okf-instructions.md) for detailed requirements.
-
-- [Required programming language/tools] *(e.g., Python, Node.js, etc.)*
-- [Required frameworks or libraries] *(e.g., Flask, React, Docker, etc.)*
-
----
+- Python 3.10+
+- Git
 
 ### Installation
 
-Follow these steps to set up the project locally:
+```bash
+# Clone the repository
+git clone https://github.com/papajo/test-proj.git
+cd test-proj
 
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/papajo/test-proj.git
-   ```
-
-2. **Navigate to the project directory:**
-   ```bash
-   cd test-proj
-   ```
-
-3. **Install dependencies and configure the environment** as described in [okf-instructions.md](okf-instructions.md).
+# Install OKF tools
+bash ~/.agents/skills/okf-template-builder/install.sh
+```
 
 ---
 
 ## Usage
 
-Once you’ve completed installation and setup, you can start working with the project. Detailed instructions on usage can be found in the [okf-instructions.md](okf-instructions.md) file.
+### Create OKF for New Project
 
-Example commands:
 ```bash
-# Run the application (replace with instructions from okf-instructions.md)
-COMMAND
-
-# Additional scripts (also detailed in okf-instructions.md)
-OTHER_COMMAND
+python ~/.agents/skills/okf-template-builder/scripts/build_template.py
 ```
 
-Feel free to customize and adapt the project according to your specific requirements.
+### Create Entity Map
+
+```bash
+python ~/.agents/skills/entity-maps/scripts/create_map.py "Project Architecture"
+```
+
+### Create New Project with OKF
+
+```bash
+newproject my-new-project
+```
 
 ---
 
-## Documentation
+## Project Structure
 
-To better understand the **Open Knowledge Format** and its principles, please refer to the [OKF.md](OKF.md) document. It provides an in-depth explanation of what OKF is and how it contributes to the **Open Knowledge Format Initiative**.
+```
+test-proj/
+├── README.md                                    # This file
+├── OKF.md                                       # Project OKF
+├── okf-instructions.md                          # OKF usage guide
+├── entity-maps.md                               # Entity maps overview
+├── entity-maps-instructions.md                  # Entity maps guide
+├── FDE-AI-Engineer-Roadmap.md                   # Original roadmap
+├── FDE-AI-Engineer-Roadmap-OKF.md               # Roadmap OKF
+└── fde-roadmap-entity-map.md                    # Roadmap entity map
+```
+
+---
+
+## Quick Reference
+
+### OKF Template Structure
+
+```markdown
+# Project Name
+
+## Overview
+[Description]
+
+## Objectives
+1. [Objective 1]
+2. [Objective 2]
+
+## Key Results
+- [ ] [Measurable result]
+
+## Architecture
+| Component | Technology |
+|-----------|------------|
+
+## Dependencies
+- [dep1]
+
+## Next Steps
+1. [Action]
+```
+
+### Entity Map Structure
+
+```markdown
+## Entities
+- **Entity**: Description `[tags]`
+
+## Relationships
+- Entity A → [relates-to] → Entity B
+
+## Graph
+```mermaid
+graph LR
+    A -->|relates-to| B
+```
+```
 
 ---
 
 ## Contributing
 
-We welcome contributions to this project! Here's how you can get involved:
-
-1. **Fork the repository** to your GitHub account.
-2. **Create a new branch** for your feature or issue:
-   ```bash
-   git checkout -b feature-name
-   ```
-3. **Commit your changes** with a clear description:
-   ```bash
-   git commit -m "Added [feature/bug fix]"
-   ```
-4. **Push your changes** to your forked repository:
-   ```bash
-   git push origin feature-name
-   ```
-5. **Submit a pull request** describing your changes and improvements.
-
-Please ensure your contributions adhere to the established code style and project documentation, and include relevant tests when applicable.
+1. Fork the repository
+2. Create a feature branch
+3. Commit your changes
+4. Push to your fork
+5. Submit a pull request
 
 ---
 
 ## License
 
-This project is licensed under the [MIT License](LICENSE). You’re free to use, modify, and distribute the software as specified in the license terms.
+MIT License - See [LICENSE](LICENSE) for details.
 
 ---
 
-## Contact
-
-For inquiries, feedback, or issues, please open a GitHub [Issue](https://github.com/papajo/test-proj/issues) or contact the repository owner directly.
-
----
-
-### Project Links
+## Project Links
 
 - [OKF Documentation](OKF.md)
-- [Setup Instructions](okf-instructions.md)
-
----
-
-Feel free to let me know if there are other details you'd like to include in this `README.md` file!
+- [OKF Instructions](okf-instructions.md)
+- [Entity Maps](entity-maps.md)
+- [Entity Maps Instructions](entity-maps-instructions.md)
+- [FDE Roadmap](FDE-AI-Engineer-Roadmap.md)
+- [FDE Roadmap OKF](FDE-AI-Engineer-Roadmap-OKF.md)
+- [FDE Entity Map](fde-roadmap-entity-map.md)
